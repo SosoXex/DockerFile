@@ -5,8 +5,7 @@ RUN apt install -y maven
 RUN apt-get install -y git
 WORKDIR build
 RUN git clone https://github.com/koddas/war-web-project.git
-WORKDIR ./war-web-project
+WORKDIR war-web-project
 RUN mvn package
-WORKDIR /build
-RUN cp /build/war-web-project/target/wwp-1.0.0.war /build/
-RUN sleep 20
+
+
