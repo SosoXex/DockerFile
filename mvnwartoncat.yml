@@ -5,12 +5,14 @@ services:
   mvn:
     build: maven3.8
     volumes:
-      - warb:/build
+      - warb1:/build
 
   web:
     image: tomcat:10.0.0-jdk11-openjdk-slim
     ports:
       - "8082:8080"
     volumes:
-      - warb:/usr/local/tomcat/webapps
+      - warb1:/usr/local/tomcat/webapps
+volumes:
+  warb1:
 ---
