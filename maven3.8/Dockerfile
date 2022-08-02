@@ -7,5 +7,5 @@ WORKDIR build
 RUN git clone https://github.com/koddas/war-web-project.git
 WORKDIR war-web-project
 RUN mvn package
-
+CMD ["/bin/bash"]
 
