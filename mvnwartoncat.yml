@@ -1,11 +1,11 @@
 ---
-version: '3'
+version: '2'
 services:
 
   mvn:
     build: maven3.8
     volumes:
-      - warb:/build/target/wwp-1.0.0.war
+      - warb:/build
 
   web:
     image: tomcat:10.0.0-jdk11-openjdk-slim
@@ -13,6 +13,4 @@ services:
       - "8082:8080"
     volumes:
       - warb:/usr/local/tomcat/webapps
-volumes:
-  warb:
 ---
