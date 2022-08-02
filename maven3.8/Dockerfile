@@ -3,11 +3,10 @@ RUN apt update -y
 RUN apt install -y default-jdk
 RUN apt install -y maven
 RUN apt-get install -y git
+WORKDIR build
 RUN git clone https://github.com/koddas/war-web-project.git
-WORKDIR war-web-project
-RUN touch 1.log /tmp && pwd >> /tmp/1.log
+WORKDIR build/war-web-project
 RUN mvn package
 RUN pwd
-WORKDIR ../build
-RUN cp ../war-web-project/target/wwp-1.0.0.war .
+RUN cp ../war-web-project/target/wwp-1.0.0.war /tmp
 RUN pwd
