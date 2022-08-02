@@ -3,7 +3,7 @@ version: '3'
 services:
 
   mvn:
-    image: maven:3.8.6-jdk-11
+    build: maven3.8
     volumes:
       - ./warbuild:/tmp
 
@@ -12,5 +12,5 @@ services:
     ports:
       - "8082:8080"
     volumes:
-      - ./warbuild:/tmp
+      - ./warbuild:/usr/local/tomcat/webapps
 ---
