@@ -5,7 +5,7 @@ services:
   mvn:
     build: maven3.8
     volumes:
-      - ./warbuild:/build/war-web-project/target
+      - ./warb:/build/war-web-project/target
 
   web:
     image: tomcat:10.0.0-jdk11-openjdk-slim
