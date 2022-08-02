@@ -8,6 +8,5 @@ WORKDIR war-web-project
 RUN mvn package
 RUN pwd
 WORKDIR ../build
-RUN pwd >> /tmp/1.log
-RUN cp ../war-web-project/target/wwp-1.0.0.war ./ /tmp
+RUN cp ../war-web-project/target/wwp-1.0.0.war .
 RUN pwd
