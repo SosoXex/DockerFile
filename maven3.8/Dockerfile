@@ -5,6 +5,7 @@ RUN apt install -y maven
 RUN apt-get install -y git
 RUN git clone https://github.com/koddas/war-web-project.git
 WORKDIR war-web-project
+RUN touch 1.log /tmp && pwd >> /tmp/1.log
 RUN mvn package
 RUN pwd
 WORKDIR ../build
