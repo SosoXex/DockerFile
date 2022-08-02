@@ -2,8 +2,15 @@
 version: '3'
 services:
 
-  web:
+  mvn:
     image: maven:3.8.6-jdk-11
+    volumes:
+      - ./warbuild:/tmp
+
+  web:
+    image: tomcat:10-slim
+    ports:
+      - "8082:8080"
     volumes:
       - ./warbuild:/tmp
 ---
